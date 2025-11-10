@@ -222,5 +222,5 @@ p[style*="text-align:right"] { color: #666; margin: 12px 0 0 0; }
   name { text-align: center; font-size: 28px; }
   heading { font-size: 18px; text-align: left; }
   papertitle { font-size: 17px; display: block; margin-bottom: 6px; }
-  p a { display: inline-block; margin-right: 8px; margin-bottom: 6px; }
+  p a { display: inline; margin-right: 0; margin-bottom: 0; }
 }
