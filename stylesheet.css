@@ -149,7 +149,7 @@ body {
   justify-content: center;
 }
 
-body > table {
+main.site {
   background: #ffffff;
   max-width: 900px;
   width: 100%;
@@ -191,6 +191,15 @@ papertitle {
   color: #0b254a;
 }
 
+/* Header and site sections */
+.site-header { display: flex; gap: 18px; align-items: center; padding: 6px 0 18px; border-bottom: 1px solid #eee; }
+.header-inner { display: flex; gap: 18px; align-items: center; width: 100%; }
+.header-content { flex: 1; }
+.header-avatar img { width: 140px; height: 140px; object-fit: cover; border-radius: 8px; }
+
+.patents { padding: 14px 0; }
+.site-footer { padding: 12px 0 0; }
+
 /* links */
 a { color: #1d6edb; }
 a:hover, a:focus { color: #d97306; }
@@ -201,24 +210,25 @@ img { max-width: 100%; height: auto; display: block; border-radius: 6px; }
 .one, .two { width: 140px; height: 140px; }
 .two img { border-radius: 8px; }
 
-/* subtle separators between entries */
-table > tbody > tr { border-bottom: 1px solid #eee; }
-table > tbody > tr:last-child { border-bottom: none; }
+/* semantic paper entries */
+.paper { display: flex; gap: 18px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid #eee; }
+.paper:last-child { border-bottom: none; }
+.paper-media { width: 140px; flex-shrink: 0; }
+.paper-body { flex: 1; }
 
-/* ensure table cells are readable */
+/* ensure legacy table cells are still readable if present */
 table td { vertical-align: top; box-sizing: border-box; }
 
 /* footer small text */
 p[style*="text-align:right"] { color: #666; margin: 12px 0 0 0; }
 
-/* Responsive behaviour: stack the table-based layout on small screens */
+/* Responsive behaviour: stack the semantic layout on small screens */
 @media (max-width: 700px) {
   body { padding: 12px; }
-  body > table { padding: 12px; }
-  /* force tables to become vertical flow */
-  table, tbody, tr, td { display: block !important; width: 100% !important; }
-  td { padding: 10px !important; }
-  .one, .two { margin: 0 auto 10px; width: 120px; height: 120px; position: relative; }
+  main.site { padding: 12px; }
+  .paper { flex-direction: column; gap: 12px; padding: 12px 0; }
+  .paper-media { margin: 0 auto; width: 120px; }
+  .one, .two { margin: 0 auto; width: 120px; height: 120px; position: relative; }
   name { text-align: center; font-size: 28px; }
   heading { font-size: 18px; text-align: left; }
   papertitle { font-size: 17px; display: block; margin-bottom: 6px; }
